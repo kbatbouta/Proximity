@@ -45,9 +45,6 @@ namespace Proximity
                IntVec3 newPos)
             {
                 if (newPos.IsValid == false) return;
-                // Limiting the number of checks by limiting the resolution
-                if (oldPos.IsValid && Mathf.Abs(newPos.x - oldPos.x) < 3f) return;
-
                 if (thing.Destroyed || !thing.Spawned) return;
                 if (thing.Map == null) return;
                 if (thing.positionInt == null) return;
