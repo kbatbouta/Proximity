@@ -10,7 +10,7 @@ namespace Proximity
 {
     public class Patches
     {
-        [HarmonyPatch(typeof(Thing), nameof(Thing.Position))]
+        [HarmonyPatch(typeof(Thing), nameof(Thing.Position), MethodType.Setter)]
         internal static class Thing_Position_Set
         {
             static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
